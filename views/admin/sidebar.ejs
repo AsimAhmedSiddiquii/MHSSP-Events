@@ -1,0 +1,62 @@
+<nav id="sidebar" class="sidebar js-sidebar">
+    <div class="sidebar-content js-simplebar">
+        <a class="sidebar-brand" href="/admin/dashboard">
+            <span class="align-middle">MHSSP Events</span>
+        </a>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-header">
+                Pages
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="/admin/dashboard">
+                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="/admin/events">
+                    <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Events</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="/admin/notices">
+                    <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Notices</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="/admin/achievements">
+                    <i class="align-middle" data-feather="award"></i> <span class="align-middle">Achievements</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="/admin/circulars">
+                    <i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Circulars</span>
+                </a>
+            </li>
+
+            <% if (userType == "Admin") { %>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin/users">
+                        <i class="align-middle" data-feather="users"></i> <span class="align-middle">Users</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin/change-password">
+                        <i class="align-middle" data-feather="lock"></i> <span class="align-middle">Change Password</span>
+                    </a>
+                </li>
+                <% } %>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/logout">
+                            <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Logout</span>
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</nav>

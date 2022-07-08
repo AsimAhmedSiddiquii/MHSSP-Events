@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
+
+    <title>Events | Admin</title>
+    <link rel="icon" type="image/x-icon" href="/img/mhssp.png">
+
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('../sidebar') %>
+
+            <div class="main">
+                <nav class="navbar navbar-expand navbar-light navbar-bg">
+                    <a class="sidebar-toggle js-sidebar-toggle">
+                        <i class="hamburger align-self-center"></i>
+                    </a>
+                </nav>
+
+                <main class="content">
+                    <div class="container-fluid p-0">
+
+                        <h1 class="h3 mb-3">Events
+                            <a href="/admin/add-event" class="btn btn-sm btn-outline-primary float-end"><i data-feather="plus-circle"></i> Add new event</a>
+                        </h1>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="box box-primary">
+                                        <div class="box-body">
+                                            <table width="100%" class="table table-hover" id="dataTables-example">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Title</th>
+                                                        <th>Type</th>
+                                                        <th>Description</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <%
+                                                    if(eventsData.length!=0){
+                                                    eventsData.forEach(function(data){
+                                                    %>
+                                                        <tr>
+                                                            <td>
+                                                                <%=data.title %>
+                                                            </td>
+                                                            <td>
+                                                                <%=data.type %>
+                                                            </td>
+                                                            <td>
+                                                                <%=data.desc %>
+                                                            </td>
+                                                            <td class="text-end">
+                                                                <a href="/admin/edit-event/<%= data._id%>" class="btn btn-outline-success btn-rounded"><i data-feather="edit"></i></a>
+                                                                <a href="/admin/delete-event/<%= data._id%>" class="btn btn-outline-danger btn-rounded"><i data-feather="x-circle"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                        <%  }) %>
+                                                            <% } else { %>
+                                                                <tr>
+                                                                    <td colspan="4">No Data Found</td>
+                                                                </tr>
+                                                                <% } %>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row text-muted">
+                            <div class="col-6 text-start">
+                                <p class="mb-0">
+                                    <strong>MHSSP Events</strong></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+    <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
+
+    <title>Edit Achievement | Admin</title>
+    <link rel="icon" type="image/x-icon" href="/img/mhssp.png">
+
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('../sidebar') %>
+
+            <div class="main">
+                <nav class="navbar navbar-expand navbar-light navbar-bg">
+                    <a class="sidebar-toggle js-sidebar-toggle">
+                        <i class="hamburger align-self-center"></i>
+                    </a>
+                </nav>
+
+                <main class="content">
+                    <div class="container-fluid p-0">
+
+                        <div class="mb-3">
+                            <h1 class="h3 d-inline align-middle">Edit Achievement</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form action="/admin/edit-achieve/<%= achData._id %>" enctype="multipart/form-data" method="post" class="needs-validation" novalidate accept-charset="utf-8">
+                                            <div class="row g-2">
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="catdesc" class="form-label">Achievement Date</label>
+                                                    <input type="date" class="form-control" name="date" value="<%= achData.date %>" placeholder="Enter Date" required>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                    <div class="invalid-feedback">Please enter date</div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="catname" class="form-label">Achievement Title</label>
+                                                    <input type="name" class="form-control" name="title" value="<%= achData.title %>" placeholder="Enter Achievement Title" required>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                    <div class="invalid-feedback">Please enter Notice Title.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row g-2">
+
+                                                <div class="mb-3 col-md-6">
+                                                    <label for="catimg" class="form-label">File Upload</label><br>
+                                                    <input class="input--style-5" type="file" name="achFile" accept=".png, .pdf" required>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Edit Achievement</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row text-muted">
+                            <div class="col-6 text-start">
+                                <p class="mb-0">
+                                    <strong>MHSSP Events</strong></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>
